@@ -1,7 +1,6 @@
 package com.literandltx.model.xml;
 
 import lombok.Getter;
-
 import javax.xml.bind.annotation.XmlElement;
 
 @Getter

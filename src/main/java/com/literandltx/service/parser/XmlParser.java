@@ -2,7 +2,6 @@ package com.literandltx.service.parser;
 
 import com.literandltx.model.xml.XmlItem;
 import com.literandltx.model.xml.XmlStatistics;
-
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;

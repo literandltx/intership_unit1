@@ -2,15 +2,11 @@ package com.literandltx.model;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
-@AllArgsConstructor
 @JsonAutoDetect
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CartItem {
@@ -22,6 +18,25 @@ public class CartItem {
 
     public CartItem() {
 
+    }
+
+    public CartItem(String title, String description, String group, String labels, Double rank) {
+        this.title = title;
+        this.description = description;
+        this.group = group;
+        this.labels = labels;
+        this.rank = rank;
+    }
+
+    @Override
+    public String toString() {
+        return "CartItem{" +
+                "title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", group='" + group + '\'' +
+                ", labels='" + labels + '\'' +
+                ", rank=" + rank +
+                '}';
     }
 }
 

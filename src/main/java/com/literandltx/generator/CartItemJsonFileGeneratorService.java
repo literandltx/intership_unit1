@@ -4,7 +4,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.literandltx.model.CartItem;
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class CartItemJsonFileGeneratorService {
     private static final ObjectMapper mapper = new ObjectMapper();
@@ -34,7 +36,7 @@ public class CartItemJsonFileGeneratorService {
     public void generateAndWriteJsonFiles(final String folderPath, final int numFiles, final int quantity) {
         final File folder = new File(folderPath);
         if (!folder.exists()) {
-            folder.mkdirs(); // Create folder if it doesn't exist
+            folder.mkdirs();
         }
 
         for (int i = 1; i <= numFiles; i++) {
@@ -67,7 +69,7 @@ public class CartItemJsonFileGeneratorService {
         }
 
         try {
-            mapper.writeValue(new File(filename), new ArrayList<>(cartItems));
+            mapper.writeValue(new File(filename), cartItems);
             System.out.println("JSON file created successfully: " + filename); // log
         } catch (IOException e) {
             throw new RuntimeException("Could not create JSON file: " + filename, e); // log

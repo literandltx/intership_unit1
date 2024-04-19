@@ -5,7 +5,7 @@ import com.literandltx.service.statistics.StatisticsCreatorService;
 import java.io.File;
 
 public class Main {
-    public static final int THREADS_NUMBER = 2;
+    public static final int THREADS_NUMBER = 8;
 
     public static void main(String[] args) {
         final File inputFolder = checkInputParamValidationAndReturnFilesFolder(args);
@@ -18,7 +18,7 @@ public class Main {
 
         final long endTime = System.currentTimeMillis();
 
-        System.out.println("Execution time: " + (endTime - startTime) / 1000.0 + "ms");
+        System.out.println("Execution time: " + (endTime - startTime) / 1000.0 + "sec");
         System.out.println("Result location: " + resultPath);
     }
 
